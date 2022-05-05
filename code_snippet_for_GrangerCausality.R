@@ -1,3 +1,20 @@
+
+# ==============================================================================
+# df_riskScore: R object for risk scores data.frame
+# df_CrudeOilFuture: R object for Crude oil WTI price data.frame (from paid data: e.g., Bloomberg .xlsx)
+#   columns: ref_date (Date), Price (numeric)
+# windowSize_GC: R object for selected window size (e.g., 42, 49, 56)
+# ==============================================================================
+library(dplyr)
+library(readr)
+library(lubridate)
+library(vars)
+# ==============================================================================
+
+max_p <- 14
+windowSize_GC <- 7* c(6:8) # weeks
+v_pLag <- seq(6, max_p)
+
 # Combine datasets (riskScore: PRS/ SRS; CrudeOilFuture: from Bloomberg) 
 #   by reference dates ------
 df_combined <- left_join(df_riskScore, df_CrudeOilFuture, by= "ref_date") %>%
