@@ -4,7 +4,7 @@ Appendix A: R code snippets to compute the Granger causality results in the iter
 
 Data inputs:
 1. `df_riskScore` [provided data]: R object for risk scores data.frame (e.g., *`df_final_riskScore_Jan11_2022.csv`*)
-  - columns: *ref_date* (Date), *PRS* (numeric), *SRS* (numeric)
+  - columns: *ref_date* (Date), *SRS* (numeric), *PRS* (numeric)
 2. `df_CrudeOilFuture` [paid data]: R object for Crude oil WTI price data.frame 
   - from paid data: e.g., Bloomberg .xlsx
   - columns: *ref_date* (Date), *Price* (numeric)
